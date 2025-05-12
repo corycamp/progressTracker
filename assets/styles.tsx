@@ -1,66 +1,115 @@
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
-    //Containers
-    mainViewContainer:{
-      height: "100%",
-      backgroundColor:"white",
-      flexDirection:'column',
-    },
-    headerContainer:{
-      margin:20,
-    },
-    calendarContainer:{
-      height:350
-    },
-    recentContainer:{
-      height:"auto",
-      marginLeft: 10
-    },
-    recentItemContainer:{
-        width:'95%',
-        height: 70,
-        marginTop: 10,
-        marginBottom: 10,
-        backgroundColor:"#A0C1F3",
-        borderRadius: 10,
-        padding: 5,
-        flexDirection: "row",
-        justifyContent:'space-around'
-      },
-      recentItemColumn:{
-        flexDirection:'column',
-        justifyContent: "space-around",
-        width:140,
-        overflow: "hidden",
-        textOverflow:"ellipsis",
-      },
-      recentItemPopUpModal:{
-        // position:"absolute",
-        // alignItems:"center",
-        // alignSelf:"center",
-      },
-      popUpModalTopSection:{
-        flexDirection:"row",
-        justifyContent:"space-between",
-        marginRight:10
-    },
-    //Text
-    headerText:{
-      fontSize: 35,
-      textAlign:"center"
-    },
-    recentHeader:{
-      fontSize: 30,
-    },
-    recentItemHeader:{
-        fontSize: 20,
-        color:"white"
-    },
-    recentItemValue:{
-        fontSize: 25,
-        color:"black"
-    },
-    popUpModalHeader:{
-        fontSize: 25
-    }
-  });
+  //Containers
+  mainViewContainer: {
+    height: "100%",
+    backgroundColor: "white",
+    flexDirection: "column",
+  },
+  mainViewPopUpModal: {
+    height: "100%",
+    backgroundColor: "white",
+    flexDirection: "column",
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  headerContainer: {
+    margin: 20,
+  },
+  calendarContainer: {
+    height: 350,
+  },
+  recentContainer: {
+    height: "auto",
+    marginLeft: 10,
+  },
+  recentItemContainer: {
+    width: "90%",
+    height: 70,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 10,
+    backgroundColor: "#A0C1F3",
+    borderRadius: 10,
+    padding: 5,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    boxShadow:
+      "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
+  },
+  recentItemColumn: {
+    flexDirection: "column",
+    justifyContent: "space-around",
+    width: 140,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  },
+  popUpModalTopSection: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 20,
+  },
+  popUpModalDateContainer: {
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  activityItemContainer: {
+    width: "95%",
+    height: 200,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 10,
+    backgroundColor: "#A0C1F3",
+    borderRadius: 10,
+    padding: 5,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    boxShadow:
+      "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
+    // "3px 4px 6px 1px rgba(0, 0, 0, 0.2), 0 6px 3px 0 rgba(0, 0, 0, 0.19);",
+    // " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
+  },
+  activityItemColumn: {
+    flexDirection: "column",
+    width: "90%",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    textAlign: "left",
+    flexWrap: "wrap",
+  },
+  //Text
+  headerText: {
+    fontSize: 35,
+    textAlign: "center",
+  },
+  recentHeader: {
+    fontSize: 30,
+  },
+  recentItemHeader: {
+    fontSize: 20,
+    color: "white",
+  },
+  recentItemValue: {
+    fontSize: 25,
+    color: "black",
+  },
+  popUpModalHeader: {
+    fontSize: 25,
+  },
+  popUpModalDate: {
+    fontSize: 20,
+  },
+  activityItemHeader: {
+    marginTop: 15,
+    fontSize: 25,
+    width: "100%",
+    color: "white",
+    fontWeight: "500",
+  },
+  activityItems: {
+    marginTop: 15,
+    fontSize: 20,
+    width: "100%",
+    color: "black",
+  },
+});
