@@ -6,6 +6,10 @@ export const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "column",
   },
+  mainViewHeaderContainer: {
+    width: "100%",
+    marginTop: 20,
+  },
   mainViewPopUpModal: {
     height: "100%",
     backgroundColor: "white",
@@ -66,8 +70,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
     boxShadow:
       "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
-    // "3px 4px 6px 1px rgba(0, 0, 0, 0.2), 0 6px 3px 0 rgba(0, 0, 0, 0.19);",
-    // " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
   },
   activityItemColumn: {
     flexDirection: "column",
@@ -80,6 +82,10 @@ export const styles = StyleSheet.create({
   //Text
   headerText: {
     fontSize: 35,
+    textAlign: "center",
+  },
+  mainViewHeaderText: {
+    fontSize: 30,
     textAlign: "center",
   },
   recentHeader: {

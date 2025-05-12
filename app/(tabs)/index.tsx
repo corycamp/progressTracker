@@ -1,31 +1,25 @@
-import { Image, StyleSheet, Platform, View, Text } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { styles } from "@/assets/styles";
+import { Activity } from "@/components/ui/ActivityAdderContainer";
+import { itemData } from "@/components/ui/RecentItemContainer";
+import { useState } from "react";
+import { Image, StyleSheet, Platform, View, Text } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
+  const [activityCounter, setActivityCounter] = useState<number>(1);
+  const activities: Activity[] = [];
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        <View><Text>Test</Text></View>
+        <View style={styles.mainViewContainer}>
+          <View style={styles.mainViewHeaderContainer}>
+            <Text style={styles.mainViewHeaderText}>Header</Text>
+          </View>
+          <View>
+            <Text>Header</Text>
+          </View>
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
