@@ -1,7 +1,7 @@
 import { View, Text, FlatList, ScrollView } from "react-native";
 import RecentItem from "./RecetItem";
 import { styles } from "@/assets/styles";
-import ActivityItem from "./ActivityItem";
+import ActivityItemInput from "./ActivityItemInput";
 
 export interface Activity {
   name: string;
@@ -19,14 +19,21 @@ interface ActivityAdderContainerProps {
   activityCounter: number;
 }
 
-export default function ActivityAdderContainer(
-  props: ActivityAdderContainerProps
-) {
-  const { activities } = props;
+export default function ActivityAdderContainer() {
+  // props: ActivityAdderContainerProps
+  // const { activities } = props;
   return (
-    <View style={styles.recentContainer}>
-      <Text style={styles.recentHeader}>Recent Workouts:</Text>
-      <ScrollView>{}</ScrollView>
+    <View style={styles.addActivityContainer}>
+      <Text style={styles.recentHeader}>Enter Workout:</Text>
+      <ActivityItemInput activities={[]} />
+      <View style={styles.recentContainer}>
+        <Text>Workouts Entered:</Text>
+        <FlatList
+          data={[]}
+          renderItem={({ item }) => <>HI</>}
+          // keyExtractor={(item) => item.date}
+        />
+      </View>
     </View>
   );
 }

@@ -79,6 +79,17 @@ export const styles = StyleSheet.create({
     textAlign: "left",
     flexWrap: "wrap",
   },
+  addActivityContainer: {
+    height: "auto",
+    marginLeft: 10,
+    marginTop: 10,
+    width: "95%",
+    backgroundColor: "gray",
+  },
+  activityInputText: {
+    display: "flex",
+    flexDirection: "row",
+  },
   //Text
   headerText: {
     fontSize: 35,

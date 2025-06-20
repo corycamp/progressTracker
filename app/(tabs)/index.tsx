@@ -1,7 +1,9 @@
 import { styles } from "@/assets/styles";
-import { Activity } from "@/components/ui/ActivityAdderContainer";
+import ActivityAdderContainer, {
+  Activity,
+} from "@/components/ui/ActivityAdderContainer";
 import { itemData } from "@/components/ui/RecentItemContainer";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { Image, StyleSheet, Platform, View, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
@@ -13,10 +15,15 @@ export default function HomeScreen() {
       <SafeAreaView>
         <View style={styles.mainViewContainer}>
           <View style={styles.mainViewHeaderContainer}>
-            <Text style={styles.mainViewHeaderText}>Header</Text>
+            <Text style={styles.mainViewHeaderText}>Workout Tracker</Text>
           </View>
           <View>
-            <Text>Header</Text>
+            <Text>Workout Tracker</Text>
+            <ActivityAdderContainer
+            // activities={[]}
+            // setActivityCounter={setActivityCounter}
+            // activityCounter={0}
+            />
           </View>
         </View>
       </SafeAreaView>
