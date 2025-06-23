@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
   },
   activityItemContainer: {
     width: "95%",
-    height: 200,
+    height: 160,
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 10,
@@ -82,13 +82,28 @@ export const styles = StyleSheet.create({
   addActivityContainer: {
     height: "auto",
     marginLeft: 10,
-    marginTop: 10,
+    marginTop: 20,
     width: "95%",
-    backgroundColor: "gray",
   },
   activityInputText: {
     display: "flex",
     flexDirection: "row",
+    alignItems:"center",
+    justifyContent:"space-between",
+    marginTop: 8
+  },
+  activityDataInputBox:{
+    height: 40,
+    width: 200,
+    padding: 5,
+    backgroundColor: "white",
+    borderRadius: 10,
+  },
+  activitySubmitButton:{
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    // alignItems:"flex-end"
   },
   //Text
   headerText: {
@@ -128,5 +143,8 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     width: "100%",
     color: "black",
+  },
+  addActivityHeader: {
+    fontSize: 20,
   },
 });

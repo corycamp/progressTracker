@@ -1,7 +1,8 @@
-import { View, Text, FlatList, ScrollView } from "react-native";
-import RecentItem from "./RecetItem";
+import { View, Text, FlatList, Button } from "react-native";
 import { styles } from "@/assets/styles";
 import ActivityItemInput from "./ActivityItemInput";
+import { useEffect, useState } from "react";
+import ActivityLogItem, { ActivityLogItemProps } from "./ActivityLogItem";
 
 export interface Activity {
   name: string;
@@ -13,27 +14,84 @@ export interface Activity {
   };
 }
 
-interface ActivityAdderContainerProps {
-  activities: Activity[];
-  setActivityCounter: React.Dispatch<React.SetStateAction<number>>;
-  activityCounter: number;
-}
-
 export default function ActivityAdderContainer() {
-  // props: ActivityAdderContainerProps
-  // const { activities } = props;
+  const [name, setName] = useState("");
+  const [sets, setSets] = useState("");
+  const [reps, setReps] = useState("");
+  const [minutes, setMinutes] = useState("");
+  const [hours, setHours] = useState("");
+  const [activities, setActivities] = useState<ActivityLogItemProps[]>([])
+  const [showButton, setShowButton] = useState<boolean>(false)
+
+  useEffect(()=>{
+    if(!!name && ((!!Number(sets) || !!Number(reps)) || (!!!!Number(minutes) || !!Number(hours)))){
+      setShowButton(true)
+    }else{
+      setShowButton(false)
+    }
+  },[name, sets, reps, minutes, hours])
+
+  const initializeForm = ()=>{
+    setName("")
+    setReps("")
+    setSets("")
+    setMinutes("")
+    setHours("")
+  }
+
+  const onSubmit = ()=>{
+    const newActivity  = {
+      Exercise:name,
+      sets: Number(sets),
+      reps: Number(reps),
+      ...((!!minutes || !!hours) && {duration:{
+        minutes:Number(minutes),
+        hours: Number(hours)
+      }}),
+    }
+    setActivities((prev)=> {return [...prev, newActivity]})
+    initializeForm()
+  }
+
+  const clear = ()=>{
+    setActivities([])
+    initializeForm()
+  }
+
   return (
     <View style={styles.addActivityContainer}>
-      <Text style={styles.recentHeader}>Enter Workout:</Text>
-      <ActivityItemInput activities={[]} />
-      <View style={styles.recentContainer}>
-        <Text>Workouts Entered:</Text>
-        <FlatList
-          data={[]}
-          renderItem={({ item }) => <>HI</>}
-          // keyExtractor={(item) => item.date}
-        />
+      <Text style={styles.addActivityHeader}>Enter Workout:</Text>
+      <ActivityItemInput 
+      setName={setName} 
+      setSets={setSets}
+      setHours={setHours}
+      setMinutes={setMinutes}
+      setReps={setReps}
+      reps={reps}
+      sets={sets}
+      name={name}
+      minutes={minutes}
+      hours={hours}
+      />
+      <View style={styles.activitySubmitButton}>
+        <Button title={"Clear all entries"} onPress={clear} disabled={false}/>
+        <Button title={"Add workout"} onPress={onSubmit} disabled={!showButton}/>
       </View>
+      {activities.length > 0 && (<View>
+        <Text style={styles.addActivityHeader}>Workouts Entered:</Text>
+        <FlatList
+          data={activities}
+          renderItem={({ item, index }) => 
+          <ActivityLogItem
+            key={index}
+            Exercise={item.Exercise}
+            reps={item.reps}
+            sets={item.sets}
+            duration={item.duration}
+          />
+        }
+        />
+      </View>)}
     </View>
   );
 }

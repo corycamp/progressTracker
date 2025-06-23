@@ -1,7 +1,7 @@
 import { styles } from "@/assets/styles";
-import { View, Text, Pressable } from "react-native";
+import { View, Text } from "react-native";
 
-interface ActivityLogItemProps {
+export interface ActivityLogItemProps {
   Exercise: string;
   reps?: number;
   sets?: number;
@@ -25,15 +25,15 @@ export default function ActivityLogItem(props: ActivityLogItemProps) {
         <Text style={styles.activityItemHeader} numberOfLines={1}>
           Exercise: {Exercise}
         </Text>
-        {sets && (
+        {sets ? (
           <Text style={styles.activityItems}>Sets: {!!sets ? sets : 0}</Text>
-        )}
-        {reps && (
+        ) : null}
+        {reps ? (
           <Text style={styles.activityItems}>Reps: {!!reps ? reps : 0}</Text>
-        )}
-        {duration && (
+        ): null}
+        {duration ? (
           <Text style={styles.activityItems}>Duration: {durationText}</Text>
-        )}
+        ) : null}
       </View>
     </View>
   );

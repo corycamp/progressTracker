@@ -2,7 +2,6 @@ import { styles } from "@/assets/styles";
 import {
   View,
   Text,
-  Modal,
   SafeAreaView,
   Pressable,
   FlatList,
